@@ -19,7 +19,7 @@
               <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg"></i> Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/cal"><i class="fa-solid fa-circle-info fa-lg"></i> CalsList </a>
+              <a class="nav-link active" aria-current="page" href="/cal-list"><i class="fa-solid fa-circle-info fa-lg"></i> Calorie Tracker </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-address-card fa-lg"></i> About Me </a>
@@ -66,39 +66,6 @@
         </div>
            <!-- Add more content for your about page here -->
       <% } %>
-
-      <% if (title === 'CalsList') { %>
-        <main class="container">
-          <div class="row">
-            <div class="col=md-offset-3 col-md-6">
-              <h1><%= title %></h1>
-              <br>
-          <table class="table table-bordered table-striped table-hover">
-            <tr>
-              <th class="text-center">Food Item</th>
-              <th class="text-center">Calories</th>
-              <th class="text-center">Protein(g)</th>
-              <th class="text-center">Carbs(g)</th>
-              <th class="text-center">Fat(g)</th>
-            </tr>
-                  <!-- Repeat the Template with a loop-->
-              <% for (let count = 0; count < CalList.length; count++) { %>
-                <tr>
-                  <td class="text-center"><%= CalList[count].FoodItem %></td>
-                  <td class="text-center"><%= CalList[count].Calories %></td>
-                  <td class="text-center"><%= CalList[count].Protein %></td>
-                  <td class="text-center"><%= CalList[count].Carbs %></td>
-                  <td class="text-center"><%= CalList[count].Fat %></td>
-                </tr>
-              <% } %>
-          </table>
-            </div>
-          </div>
-        </main>
-  
-  
-        <!-- Add more content for your home page here -->
-   <% } %>
      
       <!-- Contact page -->
       <% if (title === 'Contact Me') { %>

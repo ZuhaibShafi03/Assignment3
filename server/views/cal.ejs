@@ -19,7 +19,7 @@
               <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg"></i> Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/cal"><i class="fa-solid fa-circle-info fa-lg"></i> CalsList </a>
+              <a class="nav-link active" aria-current="page" href="/cal-list"><i class="fa-solid fa-circle-info fa-lg"></i> Calorie Tracker </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-address-card fa-lg"></i> About Me </a>
@@ -35,27 +35,40 @@
     </nav>
     <main class="container">
             <div class="row">
-            <div class="col-md-offset-3 col-md-6">
+            <div class="col-md-2 col-md-12">
             <h1>Welcome to Calorie Tracker</h1>
             <br>
-            <table class="table table-bordered table-striped table-hover">
+            <table class="text-center table table-bordered table-striped table-hover">
                 <tr>
-                <th class="text-center">Food Item</th>
-                <th class="text-center">Calories</th>
-                <th class="text-center">Protein</th>
-                <th class="text-center">Carbs</th>
-                <th class="text-center">Fat</th>
+                <th class="text-center col 3">Food Item</th>
+                <th class="text-center col 2">Calories</th>
+                <th class="text-center col 2">Protein(g)</th>
+                <th class="text-center col 2">Carbs(g)</th>
+                <th class="text-center col 2">Fat(g)</th>
                 </tr>
                 <!-- Repeat the Template with a loop-->
+                <% let totalCalories = 0, totalProtein = 0, totalCarbs = 0, totalFat = 0; %>
                 <% for (let count = 0; count < Callist.length; count++) { %>
                     <tr>
-                    <td class="text-center"><%= Callist[count].FoodItem %></td>
-                    <td class="text-center"><%= Callist[count].Calories %></td>
-                    <td class="text-center"><%= Callist[count].Protein %></td>
-                    <td class="text-center"><%= Callist[count].Carbs %></td>
-                    <td class="text-center"><%= Callist[count].Fat %></td>
+                        <td class="text-center"><%= Callist[count].FoodItem %></td>
+                        <td class="text-center"><%= Callist[count].Calories %></td>
+                        <td class="text-center"><%= Callist[count].Protein %></td>
+                        <td class="text-center"><%= Callist[count].Carbs %></td>
+                        <td class="text-center"><%= Callist[count].Fat %></td>
                     </tr>
+                    <% totalCalories += Callist[count].Calories; %>
+                    <% totalProtein += Callist[count].Protein; %>
+                    <% totalCarbs += Callist[count].Carbs; %>
+                    <% totalFat += Callist[count].Fat; %>
                 <% } %>
+                <!-- Display totals -->
+                <tr>
+                    <td class="text-center">Totals</td>
+                    <td class="text-center"><%= totalCalories %></td>
+                    <td class="text-center"><%= totalProtein %></td>
+                    <td class="text-center"><%= totalCarbs %></td>
+                    <td class="text-center"><%= totalFat %></td>
+                </tr>
             </table>
             </div>
             </div>
