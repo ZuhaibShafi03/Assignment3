@@ -66,6 +66,48 @@
         </div>
            <!-- Add more content for your about page here -->
       <% } %>
+
+      <% if (title === 'Services') { %>
+        <main class="container">
+          <div class="row">
+              <div class="col-md-1 col-md-12">
+              <h1 style="text-align: center;"><% title %></h1>
+              <h1 style="text-align: center;">Welcome to My Book List</h1>
+              <a href="/bookList/add" class="btn btn-primary"
+              role="button"><i class="fas fa-plus-circle"></i> Add Book
+              </a>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+              <tr class="d=flex">
+                  <th class="text-center col-1">Name</th>
+                  <th class="text-center col-1">Calories</th>
+
+              </tr>
+          <%    for(let count=0; count<booksList.length; count++) { %>
+              <tr class="d-flex">
+                  <td class="text-center col-3"><%= booksList[count].Name %></td>
+                  <td class="text-center col-3"><%= booksList[count].Calories %></td>
+                  
+                  <td class="text-center col-1">
+                    <a href="/booksList/edit/<%= booksList[count]._id %>"
+                    role="button"
+                    class="btn btn-primary btn-sm">
+                    <i class="fas fa-pencil-alt"></i> Edit
+                  </a>
+                  </td>
+                  <td class="text-center col-1">
+                    <a href="/booksList/edit/<%= booksList[count]._id %>"
+                    role="button"
+                    class="btn btn-primary btn-sm">
+                    <i class="fas fa-danger"></i> Delete
+                  </a>
+                  </td>
+              </tr>
+      <% } %>
+          </table>
+          </div>
+        <!-- Add more content for your home page here -->
+   <% } %>
      
       <!-- Contact page -->
       <% if (title === 'Contact Me') { %>
