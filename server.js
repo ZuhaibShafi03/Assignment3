@@ -109,8 +109,6 @@ router.get('/projects', (req, res) => {
  res.render('projects', { title: 'Projects' });
 });
 
-router.get('/services', (req, res) => {
-  res.render('services', { title: 'Services' });
- });
+
 
 module.exports = router;
