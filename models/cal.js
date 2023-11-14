@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 //create a cals model
-let calsModel = mongoose.Schema({
+let calModel = mongoose.Schema({
     FoodItem: String,
     Calories: Number,
     Protein: Number,
@@ -12,4 +12,4 @@ let calsModel = mongoose.Schema({
     collection: "cals"
 }
 )
-module.exports = mongoose.model('Cals', calsModel);
+module.exports = mongoose.model('Cal', calModel);
