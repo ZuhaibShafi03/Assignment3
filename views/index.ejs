@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/Content/app.css' />
+    <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css"/>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Zuhaib Shafi's Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg"></i> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/services"><i class="fa-solid fa-circle-info fa-lg"></i> Services </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-address-card fa-lg"></i> About Me </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/projects"><i class="fa-solid fa-diagram-project fa-lg"></i> Projects </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/contact"><i class="fa-solid fa-phone fa-lg"></i> Contact Me </a>
+            </li>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <h1 style="text-align: center;"><%= title %></h1>
+    <p style="text-align: center;">Welcome to my <%= title %> </p>
+    <div class="container">
+      <!-- Home page -->
+      <% if (title === 'Home') { %>
+     
+           <!-- Add more content for your home page here -->
+      <% } %>
+     
+      <!-- About page -->
+      <% if (title === 'About Me') { %>
+      <div style="text-align: center;">
+        <img src="/Asset/images/About Me 1.jpg" alt="Avatar" width="300" height="300" style="border-radius: 50%;">
+        <h3>
+          <p>Hello, I'm Zuhaib Shafi, a second-year student studying in Networking and IT Security at Ontario Tech University. I am passionate about the world of technology and cybersecurity, and I'm on a journey to become a skilled professional in this field.</p>
+
+          <p>During my academic journey, I have gained and will continue to learn valuable knowledge and hands-on experience in networking protocols, systems administration, coding languages such as python, HTML, CSS, ExpressJS, NodeJS, and cybersecurity practices. I am dedicated to enhancing my skills and staying up-to-date with the latest advancements in the industry.</p>
+
+          <p>This portfolio showcases some of <a href="/projects">my projects</a>, achievements, and contributions within the networking and IT security domain. I am excited to share my journey with you and demonstrate my commitment to this dynamic field.</p>
+
+          <p>Feel free to explore my portfolio, and if you have any inquiries or opportunities for collaboration, please don't hesitate to <a href="/contact">contact me</a>.</p>
+        </h3>
+      </div>
+       <div id="video-container" style="text-align: center;">
+        <video width="250" height="360" controls loop preload="auto" muted>
+          <source src="/Asset/images/AboutMeVIdeo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+            <br>
+        </div>
+           <!-- Add more content for your about page here -->
+      <% } %>
+     
+      <!-- Contact page -->
+      <% if (title === 'Contact Me') { %>
+        <div class="container text-center">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <form action="mailto:zuhaib.shafi@ontariotechu.net"?subject=SignUp enctype="text/plain" method="post" name="Form">
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Name:</label>
+                      <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+      
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email:</label>
+                      <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+      
+                    <div class="mb-3">
+                      <label for="phone" class="form-label">Cell No.:</label>
+                      <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{10}" required>
+                      <small class="form-text">Enter a 10-digit phone number (e.g., 1234567890).</small>
+                    </div>
+      
+                    <div class="mb-3">
+                      <label for="comments" class="form-label">Comments:</label>
+                      <textarea id="comments" name="comments" class="form-control" rows="4" required></textarea>
+                    </div>
+      
+                    <div class="mb-3">
+                      <input type="reset" value="Reset" class="btn btn-secondary">
+                      <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+           <!-- Add more content for your contact page here -->
+      <% } %>
+     
+      <!-- Projects page -->
+      <% if (title === 'Projects') { %>
+        <h2>Project 1: Networking Design Project</h2>
+        <p>This project involved designing a secure network architecture of a small company using packet tracer, linking 3 separate buildings together. It included implementing Vlans, creating subnets, usng different netowrking protocols, and testing connnectivity ensuring everything is fully functional.</p>
+        
+        <h2>Project 2: Networking Design Project</h2>
+        <p>This project is similar to the last one, working in a group of students designing 4 separate sites of a medium sized company using packet tracer, using a variety of networking protocols such as BGP, IGRP, EGP, IS-IS, and OSPF. Setting up routers and switches ensuring everything is fully functional.</p>
+        
+        <h2>Project 3: Python Word-Guessing Game</h2>
+        <p>This python project implements a word-guessing game where the player tries to guess a randomly selected word letter by letter, similar to "Hangman". The game has error handling for invalid inputs, such as non-numeric or out-of-range inputs. It also checks if the guessed letter has been guessed before. The program provides an option to exit the game during play. The players can choose to replay the game or exit after each round. This project offers an interactive word-guessing experience, making it a fun and educational game for players interested in word puzzles.</p>
+        
+        <h2>Project 4: Python Multi-Cipher Text Encryption</h2>
+        <p>This python project implements a text encryption system that offers multiple encryption methods making it a versatile tool for securing text messages. It handles errors gracefully, providing default values when needed. The RSA Cipher generates a public key and saves it to a file for future use. The program provides clear instructions and options for the user to select the desired encryption method. The encription methods used are Caesar Cipher, Subsitution Cipher, Transposition Cipher, RSA Cipher(using RSA 1024 keys), Playfair Cipher, and the Product Cipher.
+        </p>
+        <!-- Add more content for your projects page here -->
+       <% } %>
+     </div>
+  </body>
+  <footer>
+    <div class="contact-info"  style="text-align: center;">
+        <p>Contact me at: <a href="mailto:zuhaib.shafi@ontariotechu.net">zuhaib.shafi@ontariotechu.net</a></p>
+    </div>
+    <div class="social-links" style="text-align: center;">
+      <a href="https://github.com/ZuhaibShafi03">GitHub</a> |
+      <a href="https://www.linkedin.com/in/zuhaib-shafi-69b58a291">LinkedIn</a>
+    </div>  
+    <div class="copyright"  style="text-align: center;">
+        <p>&copy; 2023 Zuhaib Shafi. All rights reserved.</p>
+    </div>
+</footer>
+</html>
