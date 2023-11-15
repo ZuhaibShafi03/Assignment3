@@ -3,6 +3,7 @@ let router = express.Router();
 let mongoose = require('mongoose'); // npm i mongoose --save
 // Connect with the "cal" model
 let Cal = require('../server/models/cal');
+const CalModel = require('../server/models/cal');
 /* CRUD Operation*/
 
 // Display the list of cals
