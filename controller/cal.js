@@ -8,6 +8,9 @@ let Cal = require('../server/models/cal');
 // Display the list of cals
 module.exports.displayCalList = async (req, res, next) => {
     try {
+        const query = CalModel.find().maxTimeMS(30000);  // Adjust as needed
+        const result = await query.exec();
+        res.json(result);
         const callist = await Cal.find().exec();
         res.render('cal/cal', {
             title: 'Cal List',
