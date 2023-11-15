@@ -19,7 +19,7 @@
               <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg"></i> Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/cal-list"><i class="fa-solid fa-circle-info fa-lg"></i> Calorie Tracker </a>
+              <a class="nav-link active" aria-current="page" href="/cal-list"><i class="fa-solid fa-utensils fa-lg"></i> Calorie Tracker </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-address-card fa-lg"></i> About Me </a>
@@ -35,16 +35,20 @@
     </nav>
     <main class="container">
             <div class="row">
-            <div class="col-md-2 col-md-12">
+            <div class="col-md-1 col-md-12">
             <h1>Welcome to Calorie Tracker</h1>
+            <a href="/cal-list/add" class="btn btn-primary" role="button">
+              <i class="fas fa-plus-cicle"></i> Add a new FoodItem </a>
             <br>
             <table class="text-center table table-bordered table-striped table-hover">
                 <tr>
-                <th class="text-center col 3">Food Item</th>
-                <th class="text-center col 2">Calories</th>
-                <th class="text-center col 2">Protein(g)</th>
-                <th class="text-center col 2">Carbs(g)</th>
-                <th class="text-center col 2">Fat(g)</th>
+                <th class="text-center col-3">Food Item</th>
+                <th class="text-center col-1">Calories</th>
+                <th class="text-center col-1">Protein(g)</th>
+                <th class="text-center col-1">Carbs(g)</th>
+                <th class="text-center col-1">Fat(g)</th>
+                <th class="text-center col-1"></th>
+                <th class="text-center col-1"></th>
                 </tr>
                 <!-- Repeat the Template with a loop-->
                 <% let totalCalories = 0, totalProtein = 0, totalCarbs = 0, totalFat = 0; %>
@@ -55,6 +59,16 @@
                         <td class="text-center"><%= Callist[count].Protein %></td>
                         <td class="text-center"><%= Callist[count].Carbs %></td>
                         <td class="text-center"><%= Callist[count].Fat %></td>
+                        <td class="text-center">
+                          <a href="/cal/edit/<%= Callist[count]._id %>"
+                            class="btn btn-primary"
+                            <i class="fas fa-pencil-alt"></i> Edit </a>
+                          </td>
+                          <td class="text-center">
+                            <a href="/cal-list/delete/<%= Callist[count]._id %>" 
+                              class="btn btn-danger"
+                              <i class="delete-link">Delete</a>
+                            </td>
                     </tr>
                     <% totalCalories += Callist[count].Calories; %>
                     <% totalProtein += Callist[count].Protein; %>
@@ -74,4 +88,16 @@
             </div>
     </main>
   </body>
+  <footer>
+    <div class="contact-info"  style="text-align: center;">
+        <p>Contact me at: <a href="mailto:zuhaib.shafi@ontariotechu.net">zuhaib.shafi@ontariotechu.net</a></p>
+    </div>
+    <div class="social-links" style="text-align: center;">
+      <a href="https://github.com/ZuhaibShafi03">GitHub</a> |
+      <a href="https://www.linkedin.com/in/zuhaib-shafi-69b58a291">LinkedIn</a>
+    </div>  
+    <div class="copyright"  style="text-align: center;">
+        <p>&copy; 2023 Zuhaib Shafi. All rights reserved.</p>
+    </div>
+</footer>
 </html>

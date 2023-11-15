@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/Content/app.css' />
+    <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css"/>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Zuhaib Shafi's Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg"></i> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/cal-list"><i class="fa-solid fa-utensils fa-lg"></i> Calorie Tracker </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-address-card fa-lg"></i> About Me </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/projects"><i class="fa-solid fa-diagram-project fa-lg"></i> Projects </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/contact"><i class="fa-solid fa-phone fa-lg"></i> Contact Me </a>
+            </li>
+        </div>
+      </div>
+    </nav>
+<!-- Content for the Add Page-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <h1>Add a New Entry</h1>
+                <form class="form" method="post">
+
+                    <div class="form-group">
+                        <label for="FoodItemTextField">Food Item</label>
+                        <input type="text" class="form-control"
+                        id="FoodItemTextField"
+                        placeholder="Enter the Food Item"
+                        name="FoodItem" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="CaloriesTextField">Calories</label>
+                        <input type="number" class="form-control"
+                        id="CaloriesTextField"
+                        placeholder="Enter the Calories Amount"
+                        name="Calories" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ProteinField">Protein(g)</label>
+                        <input type="number" class="form-control"
+                        id="ProteinTextField"
+                        placeholder="Enter the Protein Amount in grams"
+                        name="Protein" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="CarbsTextField">Carbs(g)</label>
+                        <input type="number" class="form-control"
+                        id="CarbsTextField"
+                        placeholder="Enter the Carbs Amount in grams"
+                        name="Carbs" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="FatTextField">Fat(g)</label>
+                        <input type="number" class="form-control"
+                        id="FatTextField"
+                        placeholder="Enter the Fat Amount in grams"
+                        name="Fat" required>
+                    </div>
+                    
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-edit"></i> Submit
+                    </button>
+
+                    <a href="/cal-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel </a>
+                    
+                </form>   
+                <br>
+                <br>         
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-info"  style="text-align: center;">
+            <p>Contact me at: <a href="mailto:zuhaib.shafi@ontariotechu.net">zuhaib.shafi@ontariotechu.net</a></p>
+        </div>
+        <div class="social-links" style="text-align: center;">
+          <a href="https://github.com/ZuhaibShafi03">GitHub</a> |
+          <a href="https://www.linkedin.com/in/zuhaib-shafi-69b58a291">LinkedIn</a>
+        </div>  
+        <div class="copyright"  style="text-align: center;">
+            <p>&copy; 2023 Zuhaib Shafi. All rights reserved.</p>
+        </div>
+    </footer>
+    </html>
