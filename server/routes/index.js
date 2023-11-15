@@ -1,26 +1,14 @@
-var express = require('express');
-var router = express.Router();
-
+let express = require('express');
+let router = express.Router();
+let indexController = require('../../controller/index');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home Page' });
-});
+router.get('/', indexController.displayHomePage);
 /* GET About page. */
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About Me' });
-});
+router.get('/about', indexController.displayAboutPage);
 /* GET Projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Projects' });
-});
-/* GET Services page. */
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services' });
-});
+router.get('/projects', indexController.displayProjectsPage);
 /* GET Contact page. */
-router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact Me' });
-});
+router.get('/contact', indexController.displayContactmePage);
 
 //this code means that make this whole file public
 module.exports = router;
