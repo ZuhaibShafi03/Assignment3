@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Set the title of the HTML page dynamically based on the 'title' variable -->
     <title><%= title %></title>
+    <!-- Link to the custom stylesheet and Bootstrap for styling -->
     <link rel='stylesheet' href='/Content/app.css' />
     <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css"/>
   </head>
   <body>
+     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Zuhaib Shafi's Portfolio</a>
+        <!-- Navbar toggler for mobile responsiveness -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <!-- Navigation links for different pages -->
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg"></i> Home </a>
             </li>
@@ -34,20 +40,24 @@
       </div>
     </nav>
     <br>
+     <!-- Page title and introduction -->
     <h1 style="text-align: center;"><%= title %></h1>
     <p style="text-align: center;">Welcome to my <%= title %> </p>
     <div class="container">
-      <!-- Home page -->
+      <!-- Home page content section -->
       <% if (title === 'Home') { %>
      
-           <!-- Add more content for your home page here -->
+           <!--  Content for home page here -->
       <% } %>
      
-      <!-- About page -->
+      <!-- About page content section -->
       <% if (title === 'About Me') { %>
       <div style="text-align: center;">
+        <!-- Displaying an image and information about the person -->
         <img src="/Asset/images/About Me 1.jpg" alt="Avatar" width="300" height="300" style="border-radius: 50%;">
         <h3>
+          <!-- Personal introduction and information -->
+          <!-- Linking to other pages within the portfolio -->
           <p>Hello, I'm Zuhaib Shafi, a second-year student studying in Networking and IT Security at Ontario Tech University. I am passionate about the world of technology and cybersecurity, and I'm on a journey to become a skilled professional in this field.</p>
 
           <p>During my academic journey, I have gained and will continue to learn valuable knowledge and hands-on experience in networking protocols, systems administration, coding languages such as python, HTML, CSS, ExpressJS, NodeJS, and cybersecurity practices. I am dedicated to enhancing my skills and staying up-to-date with the latest advancements in the industry.</p>
@@ -57,6 +67,8 @@
           <p>Feel free to explore my portfolio, and if you have any inquiries or opportunities for collaboration, please don't hesitate to <a href="/contact">contact me</a>.</p>
         </h3>
       </div>
+          <!-- Embedding a video with controls and looping -->
+          <!-- Add more content for your about page here -->
        <div id="video-container" style="text-align: center;">
         <video width="250" height="360" controls loop preload="auto" muted>
           <source src="/Asset/images/AboutMeVIdeo.mp4" type="video/mp4">
@@ -64,11 +76,12 @@
         </video>
             <br>
         </div>
-           <!-- Add more content for your about page here -->
+           <!-- Add more content for about page here -->
       <% } %>
      
-      <!-- Contact page -->
+      <!-- Contact page content section -->
       <% if (title === 'Contact Me') { %>
+        <!-- Creating a form for contacting with input fields -->
         <div class="container text-center">
           <div class="row justify-content-center">
             <div class="col-md-6">
@@ -106,11 +119,12 @@
             </div>
           </div>
         </div>
-           <!-- Add more content for your contact page here -->
+           <!-- Add more content for contact page here -->
       <% } %>
      
-      <!-- Projects page -->
+      <!-- Projects page content section -->
       <% if (title === 'Projects') { %>
+        <!-- Displaying information about different projects with titles and descriptions -->
         <h2>Project 1: Networking Design Project</h2>
         <p>This project involved designing a secure network architecture of a small company using packet tracer, linking 3 separate buildings together. It included implementing Vlans, creating subnets, usng different netowrking protocols, and testing connnectivity ensuring everything is fully functional.</p>
         
@@ -123,18 +137,21 @@
         <h2>Project 4: Python Multi-Cipher Text Encryption</h2>
         <p>This python project implements a text encryption system that offers multiple encryption methods making it a versatile tool for securing text messages. It handles errors gracefully, providing default values when needed. The RSA Cipher generates a public key and saves it to a file for future use. The program provides clear instructions and options for the user to select the desired encryption method. The encription methods used are Caesar Cipher, Subsitution Cipher, Transposition Cipher, RSA Cipher(using RSA 1024 keys), Playfair Cipher, and the Product Cipher.
         </p>
-        <!-- Add more content for your projects page here -->
+        <!-- Add more content for projects page here -->
        <% } %>
      </div>
   </body>
+  <!-- Footer section with contact information, social links, and copyright notice -->
   <footer>
     <div class="contact-info"  style="text-align: center;">
         <p>Contact me at: <a href="mailto:zuhaib.shafi@ontariotechu.net">zuhaib.shafi@ontariotechu.net</a></p>
     </div>
     <div class="social-links" style="text-align: center;">
+       <!-- Links to social media profiles -->
       <a href="https://github.com/ZuhaibShafi03">GitHub</a> |
       <a href="https://www.linkedin.com/in/zuhaib-shafi-69b58a291">LinkedIn</a>
     </div>  
+    <!-- Copyright notice -->
     <div class="copyright"  style="text-align: center;">
         <p>&copy; 2023 Zuhaib Shafi. All rights reserved.</p>
     </div>

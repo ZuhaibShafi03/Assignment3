@@ -1,7 +1,9 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
 }
 
+/* Navbar Styles */
 .navbar {
     background-color: #343a40;
 }
@@ -18,19 +20,23 @@ body {
     color: #ffffff;
 }
 
+/* Container Styles */
 .container {
     margin-top: 20px;
 }
 
+/* Heading Styles */
 h1, h2 {
     text-align: center;
-    font-family: 'Times New Roman' 'sans-serif';
+    font-family: 'Times New Roman', sans-serif;
 }
 
+/* Paragraph Styles */
 p {
     text-align: center;
 }
 
+/* Image Styles */
 img {
     max-width: 300px;
     height: 300px;
@@ -38,12 +44,14 @@ img {
     text-align: center;
 }
 
+/* Video Styles */
 video {
     width: 250px;
     height: 360px;
     text-align: center;
 }
 
+/* Footer Styles */
 footer {
     background-color: #343a40;
     color: #ffffff;
@@ -51,35 +59,38 @@ footer {
     padding: 20px 0;
 }
 
+/* Link Styles in Footer */
 .contact-info a, .social-links a {
     color: #ffffff;
     text-decoration: none;
 }
+
+/* Table Styles */
 .custom-table {
     background-color: #ffffff; /* White background */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
+}
 
-  .custom-table th, .custom-table td {
+.custom-table th, .custom-table td {
     text-align: center; /* Center text in cells */
     padding: 10px; /* Adjusted padding */
-  }
+}
 
-  .custom-table thead th {
+.custom-table thead th {
     background-color: #343a40; /* Dark background for header */
     color: #ffffff; /* White text for header */
-  }
+}
 
-  .custom-table tbody tr:nth-child(even) {
+.custom-table tbody tr:nth-child(even) {
     background-color: rgb(65, 118, 170); /* Alternate row color */
-  }
+}
 
-  .custom-table tbody tr:hover {
+.custom-table tbody tr:hover {
     background-color: #32363a; /* Light background on hover */
-  }
+}
 
-  .custom-table .btn {
+.custom-table .btn {
     padding: 5px 10px; /* Adjust padding for buttons */
     margin: 2px; /* Adjust margin for buttons */
-  }
+}

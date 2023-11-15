@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Set the title of the HTML page dynamically based on the 'title' variable -->
     <title><%= title %></title>
+    
+    <!-- Link to the custom stylesheet and Bootstrap for styling -->
     <link rel='stylesheet' href='/Content/app.css' />
     <link rel='stylesheet' href="/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css"/>
   </head>
   <body>
+    <!-- Navigation bar using Bootstrap styling -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Zuhaib Shafi's Portfolio</a>
+        <!-- Navbar toggler for mobile responsiveness -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- Navigation links for different pages -->
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house fa-lg"></i> Home </a>
             </li>
@@ -33,13 +40,17 @@
         </div>
       </div>
     </nav>
-<!-- Content for the Add Page-->
+
+    <!-- Content for the Add Page -->
     <div class="container">
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
+                <!-- Heading for the Add Entry Form -->
                 <h1>Add a New Entry</h1>
+                <!-- Form for adding a new entry with various input fields -->
                 <form class="form" method="post">
 
+                    <!-- Input field for Food Item -->
                     <div class="form-group">
                         <label for="FoodItemTextField">Food Item</label>
                         <input type="text" class="form-control"
@@ -48,6 +59,7 @@
                         name="FoodItem" required>
                     </div>
 
+                    <!-- Input field for Calories -->
                     <div class="form-group">
                         <label for="CaloriesTextField">Calories</label>
                         <input type="number" class="form-control"
@@ -56,6 +68,7 @@
                         name="Calories" required>
                     </div>
 
+                    <!-- Input field for Protein -->
                     <div class="form-group">
                         <label for="ProteinField">Protein(g)</label>
                         <input type="number" class="form-control"
@@ -64,6 +77,7 @@
                         name="Protein" required>
                     </div>
 
+                    <!-- Input field for Carbs -->
                     <div class="form-group">
                         <label for="CarbsTextField">Carbs(g)</label>
                         <input type="number" class="form-control"
@@ -72,6 +86,7 @@
                         name="Carbs" required>
                     </div>
 
+                    <!-- Input field for Fat -->
                     <div class="form-group">
                         <label for="FatTextField">Fat(g)</label>
                         <input type="number" class="form-control"
@@ -80,6 +95,7 @@
                         name="Fat" required>
                     </div>
                     
+                    <!-- Submit and Cancel buttons -->
                     <button class="btn btn-primary" type="submit">
                         <i class="fas fa-edit"></i> Submit
                     </button>
@@ -94,16 +110,20 @@
         </div>
     </div>
 
+    <!-- Footer section with contact information, social links, and copyright notice -->
     <footer>
         <div class="contact-info"  style="text-align: center;">
             <p>Contact me at: <a href="mailto:zuhaib.shafi@ontariotechu.net">zuhaib.shafi@ontariotechu.net</a></p>
         </div>
         <div class="social-links" style="text-align: center;">
+          <!-- Links to social media profiles -->
           <a href="https://github.com/ZuhaibShafi03">GitHub</a> |
           <a href="https://www.linkedin.com/in/zuhaib-shafi-69b58a291">LinkedIn</a>
         </div>  
         <div class="copyright"  style="text-align: center;">
+            <!-- Copyright notice -->
             <p>&copy; 2023 Zuhaib Shafi. All rights reserved.</p>
         </div>
     </footer>
-    </html>
+  </body>
+</html>

@@ -1,10 +1,11 @@
 let express = require('express');
 let router = express.Router();
-let mongoose = require('mongoose'); //npm i mongoose --save
-//connect with cals model
+let mongoose = require('mongoose'); // npm i mongoose --save
+// Connect with the "cal" model
 let Cal = require('../server/models/cal');
 /* CRUD Operation*/
 
+// Display the list of cals
 module.exports.displayCalList = async (req, res, next) => {
     try {
         const callist = await Cal.find().exec();
@@ -18,10 +19,12 @@ module.exports.displayCalList = async (req, res, next) => {
     }
 }
 
+// Display the add page
 module.exports.displayAddPage = async (req, res, next) => {
-    res.render('cal/add',{title:'Add Cal'})
+    res.render('cal/add', { title: 'Add Cal' });
 }
 
+// Process the add page
 module.exports.processAddPage = async (req, res, next) => {
     try {
         let newCal = new Cal({
@@ -32,7 +35,7 @@ module.exports.processAddPage = async (req, res, next) => {
             "Fat": req.body.Fat
         });
 
-        await Cal.create(newCal);  
+        await Cal.create(newCal);
         res.redirect('/cal-list');
     } catch (err) {
         console.error(err);
@@ -40,6 +43,7 @@ module.exports.processAddPage = async (req, res, next) => {
     }
 }
 
+// Display the edit page
 module.exports.displayEditPage = async (req, res, next) => {
     try {
         let id = req.params.id;
@@ -51,6 +55,7 @@ module.exports.displayEditPage = async (req, res, next) => {
     }
 }
 
+// Process the edit page
 module.exports.processEditPage = async (req, res, next) => {
     try {
         let id = req.params.id;
@@ -69,17 +74,18 @@ module.exports.processEditPage = async (req, res, next) => {
     }
 }
 
+// Perform delete operation
 module.exports.preformDelete = async (req, res, next) => {
     let id = req.params.id.trim();
     Cal.deleteOne({ _id: id })
-    .then(result => {
-        // Handle the result of the delete operation
-        console.log(result);
-        res.redirect('/cal-list');
-    })
-    .catch(err => {
-        // Handle the error
-        console.error(err);
-        res.status(500).send("Internal Server Error");
-    });
+        .then(result => {
+            // Handle the result of the delete operation
+            console.log(result);
+            res.redirect('/cal-list');
+        })
+        .catch(err => {
+            // Handle the error
+            console.error(err);
+            res.status(500).send("Internal Server Error");
+        });
 }

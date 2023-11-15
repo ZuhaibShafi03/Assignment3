@@ -1,14 +1,25 @@
+// Import necessary modules and packages
 let express = require('express');
 let router = express.Router();
 let indexController = require('../../controller/index');
-/* GET home page. */
+
+/* Routing for Basic Pages */
+
+/* Home Page */
+// GET route for the home page
 router.get('/', indexController.displayHomePage);
-/* GET About page. */
+
+/* About Page */
+// GET route for the about page
 router.get('/about', indexController.displayAboutPage);
-/* GET Projects page. */
+
+/* Projects Page */
+// GET route for the projects page
 router.get('/projects', indexController.displayProjectsPage);
-/* GET Contact page. */
+
+/* Contact Page */
+// GET route for the contact page
 router.get('/contact', indexController.displayContactmePage);
 
-//this code means that make this whole file public
+// This code exports the router, making it available for use in other parts of the application
 module.exports = router;
