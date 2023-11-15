@@ -48,44 +48,37 @@ router.post('/add', async (req, res, next) => {
 });
 
 /* Edit Operation */
-/* Get Route for the displaying Edit Operation - Update Operation */
+/* Get Route for displaying Edit Operation - Update Operation */
 router.get('/edit/:id', async (req, res, next) => {
-    let id = req.params.id;
-    Cal.findById(id,(err,calToEdit) =>{
-        if(err)
-        {
-            console.log(err)
-            res.end(err);
-        }
-        else
-        {
-            res.render('cal/edit', {title: 'Edit Cal', cal:calToEdit});
-        }
-    });
+    try {
+        let id = req.params.id;
+        let calToEdit = await Cal.findById(id);
+        res.render('cal/edit', { title: 'Edit Cal', cal: calToEdit });
+    } catch (err) {
+        console.log(err);
+        res.end(err);
+    }
 });
-/* Post Route for displaying the Edit Operation - Update Operation */
+
+/* Post Route for displaying Edit Operation - Update Operation */
 router.post('/edit/:id', async (req, res, next) => {
-    let id = req.params.id;
-    let updateCal = Cal({
-        "_id":id,
-        "FoodItem": req.body.FoodItem,
-        "Calories": req.body.Calories,
-        "Protein": req.body.Protein,
-        "Carbs": req.body.Carbs,
-        "Fat": req.body.Fat
-    });
-    Cal.updateOne({_id:id},updateCal,(err) =>{
-        if(err)
-        {
-            console.log(err)
-            res.end(err);
-        }
-        else
-        {
-            res.redirect('/cal-list');
-        }
-    });
+    try {
+        let id = req.params.id;
+        let updateCal = {
+            "FoodItem": req.body.FoodItem,
+            "Calories": req.body.Calories,
+            "Protein": req.body.Protein,
+            "Carbs": req.body.Carbs,
+            "Fat": req.body.Fat
+        };
+        await Cal.updateOne({ _id: id }, updateCal);
+        res.redirect('/cal-list');
+    } catch (err) {
+        console.log(err);
+        res.end(err);
+    }
 });
+
 /* Delete Operation */
 /* Get to perform Delete Operation -- deletion */
 router.get('/delete/:id', async (req, res, next) => {
