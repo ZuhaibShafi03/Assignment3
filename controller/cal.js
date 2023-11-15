@@ -3,15 +3,11 @@ let router = express.Router();
 let mongoose = require('mongoose'); // npm i mongoose --save
 // Connect with the "cal" model
 let Cal = require('../server/models/cal');
-const CalModel = require('../server/models/cal');
 /* CRUD Operation*/
 
 // Display the list of cals
 module.exports.displayCalList = async (req, res, next) => {
     try {
-        const query = CalModel.find().maxTimeMS(30000);  // Adjust as needed
-        const result = await query.exec();
-        res.json(result);
         const callist = await Cal.find().exec();
         res.render('cal/cal', {
             title: 'Cal List',
