@@ -12,7 +12,7 @@ let calModel = mongoose.Schema({
 },
 {
     // Specify the collection name in the MongoDB database
-    collection: "cal"
+    collection: "cals"
 });
 
 // Export the Mongoose model for the 'Cal' collection
